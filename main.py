@@ -24,6 +24,6 @@ if __name__ == '__main__':
     # print(f'Линейный вызов функций: {time.time() - ts} сек.')
 
     ts = time.time()
-    with Pool(4) as pool:
+    with Pool(len(filenames)) as pool:
         pool.map(read_info, filenames)
     print(f'Многопроцессный вызов функций: {time.time() - ts}')
